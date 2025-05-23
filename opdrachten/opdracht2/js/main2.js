@@ -1,55 +1,32 @@
-const apiKey = 'iwWVjIS72DJCxHEmA76JPAfp0V5nwlGwbxeYT2ONzCKzBT6INogbS9aj'; 
-const gallery = document.getElementById('gallery');
-const loader = document.getElementById('loader');
-let page = 1;
-let isLoading = false;
-const maxPhotosPerPage = 8;
+const container = document.getElementById("container");
+const loader = document.getElementById("loader");
 
-async function fetchPhotos(page) {
-  const url = `https://api.pexels.com/v1/curated?page=${page}&per_page=${maxPhotosPerPage}`;
-  const response = await fetch(url, {
-    headers: {
-      Authorization: apiKey
+let itemCount = 0;
+const batchSize = 20;
+
+function loadItems() {
+    for (let i =0; i < batchSize; i++) {
+        const item = document.createElement("div");
+        item.className = "item";
+        item.textContent = `Item  ${++itemCount}`;
+        container.appendChild(item);
     }
-  });
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
-  const data = await response.json();
-  return data.photos;
 }
 
-function createImageElement(photo) {
-  const img = document.createElement('img');
-  img.src = photo.src.medium;
-  img.alt = photo.alt || 'Pexels foto';
-  img.loading = 'lazy';
-  img.classList.add('fixed-size'); 
-  return img;
-}
+const observer = new IntersectionObserver((entries) => {
+  const entry = entries[0];
+  if (entry.isIntersecting) {
+    observer.unobserve(loader);
 
-async function loadImages() {
-  if (isLoading) return;
-  isLoading = true;
-  loader.style.display = 'block';
-  const photos = await fetchPhotos(page);
-  photos.forEach(photo => {
-    const img = createImageElement(photo);
-    gallery.appendChild(img);
-  });
-  loader.style.display = 'none';
-  page++;
-  isLoading = false;
-}
-
-const observer = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting) {
-    loadImages();
+    setTimeout(() => {
+      loadItems();
+      observer.observe(loader); 
+    }, 500); 
   }
 }, {
-  rootMargin: '100px'
+  rootMargin: "100px",
+  threshold: 0
 });
 
+loadItems();
 observer.observe(loader);
-
-loadImages();
