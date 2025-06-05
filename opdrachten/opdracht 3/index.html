@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mijn Skills</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background"></div>
+
+  <header class="header">
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="#home" class="nav__link">Home</a></li>
+        <li><a href="#skills" class="nav__link">Mijn Skills</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section section--hero" id="home">
+      <h1 class="section__title">Welkom bij mijn Onepager</h1>
+    </section>
+
+    <section class="section section--skills" id="skills">
+      <div class="section__content">
+        <h2 class="section__subtitle">Mijn Skills</h2>
+        <p class="section__text">Ik ben goed in programmeren (HTML, CSS, JS), maar ook in samenwerken en sporten. Deze pagina laat zien wat ik kan!</p>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contact">
+      <h2 class="section__subtitle">Neem contact op</h2>
+      <form class="form" action="mailto: 38734@ma-web.nl" method="POST">
+        <input type="text" name="naam" class="form__input" placeholder="Jouw naam" required>
+        <input type="email" name="email" class="form__input" placeholder="Jouw e-mailadres" required>
+        <textarea name="bericht" class="form__textarea" placeholder="Jouw bericht" required></textarea>
+        <input type="hidden" name="send_to_mail" value="jouw@email.nl">
+        <button type="submit" class="form__button">Verstuur</button>
+      </form>
+    </section>
+  </main>
+
+  
+
+  <script src="js/main.js"></script>
+</body>
+</html>
