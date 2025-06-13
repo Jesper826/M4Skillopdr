@@ -4,7 +4,7 @@
   --color-dark: #333;
   --transition-speed: 0.4s;
   --font-main: 'Roboto', sans-serif;
-}
+} 
 
 * {
   margin: 0;
@@ -80,6 +80,10 @@ body {
   transform: translateY(0);
 }
 
+.section--rotating {
+  animation: slow-rotate 3s linear;
+}
+
 .section__title {
   font-size: 3rem;
 }
@@ -143,4 +147,13 @@ body {
 .main {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
+}
+
+@keyframes slow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

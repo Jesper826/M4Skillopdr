@@ -7,7 +7,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.2 });
-
+ 
 sections.forEach(section => {
   observer.observe(section);
 });
@@ -26,5 +26,14 @@ setTimeout(() => {
     bg.classList.add('background--fade');
   }
 }, 5000);
+
+document.querySelectorAll('.section').forEach(section => {
+  section.addEventListener('mouseenter', () => {
+    section.classList.add('section--rotating');
+    setTimeout(() => {
+      section.classList.remove('section--rotating');
+    }, 3000);
+  });
+});
 
 
