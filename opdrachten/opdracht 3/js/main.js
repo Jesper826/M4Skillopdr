@@ -22,9 +22,9 @@ window.addEventListener('scroll', () => {
 
 setTimeout(() => {
   const bg = document.querySelector('.background');
-  if (bg) {
-    bg.classList.add('background--fade');
-  }
+  // if (bg) {
+  //   bg.classList.add('background--fade');
+  // }
 }, 5000);
 
 document.querySelectorAll('.section').forEach(section => {
