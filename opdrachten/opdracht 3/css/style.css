@@ -149,6 +149,34 @@ body {
   grid-template-rows: repeat(3, 1fr);
 }
 
+.section--languages {
+  background: rgba(0,0,0,0.4);
+  min-height: 300px;
+}
+
+.languages-scroll {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 2rem 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) #222;
+}
+
+.language-logo {
+  height: 80px;
+  flex: 0 0 auto;
+  transition: transform 0.3s;
+  background: white;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.language-logo:hover {
+  transform: scale(1.15) rotate(-5deg);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
 @keyframes slow-rotate {
   from {
     transform: rotate(0deg);

@@ -36,4 +36,13 @@ document.querySelectorAll('.section').forEach(section => {
   });
 });
 
+document.querySelectorAll('.languages-scroll').forEach(el => {
+  el.addEventListener('wheel', (evt) => {
+    if (evt.deltaY !== 0) {
+      evt.preventDefault();
+      el.scrollLeft += evt.deltaY;
+    }
+  });
+});
+
 
