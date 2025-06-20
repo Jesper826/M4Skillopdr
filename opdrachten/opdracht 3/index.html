@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="background"></div>
 
@@ -18,7 +20,7 @@
         <li><a href="#contact" class="nav__link">Contact</a></li>
       </ul>
     </nav>
-  </header> 
+  </header>
 
   <main class="main">
     <section class="section section--hero" id="home">
@@ -29,7 +31,10 @@
       <div class="section__content">
         <h2 class="section__subtitle">Mijn Skills</h2>
         <p class="section__text">
-          Ik ben goed in programmeren (HTML, CSS, JS), samenwerken, sporten, probleemoplossend denken, creatief ontwerpen, presenteren, plannen & organiseren, Engels spreken, kritisch denken, time management, klantgericht werken, zelfstandig werken, feedback geven en ontvangen, analyseren, stressbestendig zijn, en snel nieuwe dingen leren. 
+          Ik ben goed in programmeren (HTML, CSS, JS), samenwerken, sporten, probleemoplossend denken, creatief
+          ontwerpen, presenteren, plannen & organiseren, Engels spreken, kritisch denken, time management, klantgericht
+          werken, zelfstandig werken, feedback geven en ontvangen, analyseren, stressbestendig zijn, en snel nieuwe
+          dingen leren.
         </p>
       </div>
     </section>
@@ -37,29 +42,39 @@
     <section class="section section--languages">
       <h2 class="section__subtitle">Programmeertalen</h2>
       <div class="languages-scroll">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="language-logo" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="language-logo" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="language-logo" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="language-logo" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="language-logo" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="language-logo" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
+          class="language-logo" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
+          class="language-logo" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+          alt="JavaScript" class="language-logo" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+          class="language-logo" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"
+          class="language-logo" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+          class="language-logo" />
       </div>
     </section>
 
-    <section class="section section--contact" id="contact">
-      <h2 class="section__subtitle">Neem contact op</h2>
-      <form class="form" action="mailto: 38734@ma-web.nl" method="POST">
-        <input type="text" name="naam" class="form__input" placeholder="Jouw naam" required>
-        <input type="email" name="email" class="form__input" placeholder="Jouw e-mailadres" required>
-        <textarea name="bericht" class="form__textarea" placeholder="Jouw bericht" required></textarea>
-        <input type="hidden" name="send_to_mail" value="jouw@email.nl">
-        <button type="submit" class="form__button">Verstuur</button>
+  
+  </main> 
+    <section id="contact" class="section section--contact">
+      <h2 class="section__title">Contact Jesper</h2>
+      <form class="form" onsubmit="sendMail(event)" method="POST">
+        <input type="text" name="name" class="form__input" placeholder="Naam" required />
+        <input type="text" name="email" class="form__input" placeholder="Email" required />
+        <textarea type="text" name="message" class="form__input" placeholder="Bericht" required></textarea>
+        <input type="hidden" name="send_to_mail" value="bgrippeling08@gmail.com" />
+        <input type="hidden" name="_subject" value="Nieuw bericht van je CV-site" />
+        <button type="submit" class="form__button">Versturen</button>
       </form>
     </section>
   </main>
 
-  
+
 
   <script src="js/main.js"></script>
 </body>
+
 </html>

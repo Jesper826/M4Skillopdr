@@ -46,3 +46,21 @@ document.querySelectorAll('.languages-scroll').forEach(el => {
 });
 
 
+function sendMail(event) {
+  event.preventDefault();
+ 
+  const name = document.querySelector('[name="name"]').value.trim();
+  const email = document.querySelector('[name="email"]').value.trim();
+  const message = document.querySelector('[name="message"]').value.trim();
+ 
+  const subject = encodeURIComponent("Nieuw bericht van je CV-site");
+  const body = encodeURIComponent(`${message}`);
+  const recipient = "38734@ma-web.nl";
+ 
+  const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+ 
+
+  window.location.href = mailtoLink;
+}
+ 
+ 
