@@ -53,7 +53,7 @@ function sendMail(event) {
   const email = document.querySelector('[name="email"]').value.trim();
   const message = document.querySelector('[name="message"]').value.trim();
  
-  const subject = encodeURIComponent("Nieuw bericht van je CV-site");
+  const subject = encodeURIComponent('Contact Form Submission');
   const body = encodeURIComponent(`${message}`);
   const recipient = "38734@ma-web.nl";
  
