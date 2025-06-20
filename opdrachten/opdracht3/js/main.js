@@ -7,7 +7,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.2 });
- 
+
 sections.forEach(section => {
   observer.observe(section);
 });
@@ -49,18 +49,16 @@ document.querySelectorAll('.languages-scroll').forEach(el => {
 function sendMail(event) {
   event.preventDefault();
  
-  const name = document.querySelector('[name="name"]').value.trim();
+  const send_to_mail = document.querySelector('[name="send_to_mail"]').value.trim();
   const email = document.querySelector('[name="email"]').value.trim();
   const message = document.querySelector('[name="message"]').value.trim();
+  const subject = encodeURIComponent("Contact naar ons");
  
-  const subject = encodeURIComponent('Contact Form Submission');
   const body = encodeURIComponent(`${message}`);
-  const recipient = "38734@ma-web.nl";
+  const recipient = encodeURIComponent(`${email}`);
  
-  const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+  const mailtoLink = `mailto:${send_to_mail}&?cc=${recipient}&?subject=${subject}&body=${body}`;
  
-
   window.location.href = mailtoLink;
 }
- 
  
